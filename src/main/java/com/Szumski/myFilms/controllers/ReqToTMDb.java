@@ -91,11 +91,9 @@ public class ReqToTMDb {
 
 
     @ResponseBody
-    @RequestMapping("/recommendations/{movieId}")
-    public ResponseAllFilms getRecommendations(@PathVariable("movieId") String movieId){
-        String page;
+    @RequestMapping("/recommendations/{movieId}/{page}")
+    public ResponseAllFilms getRecommendations(@PathVariable("movieId") String movieId, @PathVariable("page") String page){
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
-        page="1";
 
         AllList allList = restTemplate.getForObject(
                 urlGenerator.getRecommendations(movieId, page),

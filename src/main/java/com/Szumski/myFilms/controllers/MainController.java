@@ -3,8 +3,6 @@ package com.Szumski.myFilms.controllers;
 import com.Szumski.myFilms.model.ResponseForUserMovies;
 import com.Szumski.myFilms.model.User;
 import com.Szumski.myFilms.repository.MovieRepository;
-import com.Szumski.myFilms.repository.UserMoviesListRepository;
-import com.Szumski.myFilms.repository.UserRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
