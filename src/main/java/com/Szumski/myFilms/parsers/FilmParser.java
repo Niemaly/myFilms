@@ -15,7 +15,7 @@ public class FilmParser {
         movieModel.setDateOfRelease(movieTMDb.getRelease_date());
         movieModel.setRating(movieTMDb.getVote_average());
         movieModel.setSrc(movieTMDb.getPoster_path());
-
+        movieModel.setOverview(movieTMDb.getOverview());
         List genreList = new ArrayList();
 
         movieTMDb.getGenres().stream().forEach(genre -> genreList.add(genre.getId()));
@@ -32,7 +32,7 @@ public class FilmParser {
         movieModel.setRating(element.getVote_average());
         movieModel.setSrc(element.getPoster_path());
         movieModel.setTitle(element.getTitle());
-
+        movieModel.setOverview(element.getOverview());
         movieModel.setGenreIdList(element.getGenre_ids());
 
         return movieModel;

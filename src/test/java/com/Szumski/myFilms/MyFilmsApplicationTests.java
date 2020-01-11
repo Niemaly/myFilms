@@ -36,8 +36,6 @@ class MyFilmsApplicationTests {
 
 		MockHttpServletRequestBuilder builder =
 				MockMvcRequestBuilders.get("/upcoming")
-						.header("testHeader",
-								"headerValue")
 						.contentType(MediaType.APPLICATION_JSON);
 		this.mockMvc.perform(builder)
 				.andExpect(MockMvcResultMatchers.status()

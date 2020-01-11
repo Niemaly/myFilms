@@ -4,35 +4,45 @@ import java.util.List;
 
 public class ResponseForUserMovies{
 
-    private long filmId;
+    private long id;
     private String comment;
+    private String overview;
     private double ratingUser;
-    boolean status;
-    String title;
-    String src;
-    Double ratingDb;
-    String dateOfRelease;
-    List<Integer> genreIdList;
+    private boolean status;
+    private String title;
+    private String src;
+    private Double rating;
+    private String dateOfRelease;
+    private List<Integer> genreIdList;
 
     public ResponseForUserMovies(MovieModel model,UserMovie userMovie) {
 
-        this.filmId = userMovie.getMovieId();
+        this.id = userMovie.getMovieId();
         this.comment = userMovie.getComment();
         this.ratingUser = userMovie.getRating();
         this.status = userMovie.getStatus();
         this.title = model.getTitle();
         this.src = model.getSrc();
-        this.ratingDb = model.getRating();
+        this.rating = model.getRating();
         this.dateOfRelease = model.getDateOfRelease();
         this.genreIdList = model.getGenreIdList();
+        this.overview = model.getOverview();
     }
 
-    public long getFilmId() {
-        return filmId;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setFilmId(long filmId) {
-        this.filmId = filmId;
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getComment() {
@@ -75,12 +85,12 @@ public class ResponseForUserMovies{
         this.src = src;
     }
 
-    public Double getRatingDb() {
-        return ratingDb;
+    public Double getRating() {
+        return rating;
     }
 
-    public void setRatingDb(Double ratingDb) {
-        this.ratingDb = ratingDb;
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public String getDateOfRelease() {

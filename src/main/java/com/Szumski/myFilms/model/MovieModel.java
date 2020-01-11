@@ -3,7 +3,6 @@ package com.Szumski.myFilms.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Document("movies")
@@ -13,10 +12,19 @@ public class MovieModel {
     private String title;
     private String src;
     private Double rating;
+    private String overview;
     private String dateOfRelease;
     private List<Integer> genreIdList;
 
     public MovieModel() {
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
     public Long getId() {

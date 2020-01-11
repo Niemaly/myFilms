@@ -3,8 +3,6 @@ package com.Szumski.myFilms.controllers;
 import com.Szumski.myFilms.model.MovieModel;
 import com.Szumski.myFilms.model.User;
 import com.Szumski.myFilms.model.UserMovie;
-import com.Szumski.myFilms.repository.MovieRepository;
-import com.Szumski.myFilms.repository.UserRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,12 +44,9 @@ public class UserModController {
         int movieId =111;
         userMoviesService.deleteMovieFromUser(movieId);
         return userMoviesService.getAllMovies(user.getIdFilmList());
+
       }
 
 
+
     }
-
-
-
-
-
