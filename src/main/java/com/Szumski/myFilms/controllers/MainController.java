@@ -32,6 +32,10 @@ public class MainController {
 
     @RequestMapping(value = "/user_details" , method = RequestMethod.GET, produces = "application/json")
     public User mainController(@AuthenticationPrincipal User user){
+        if (user ==null){
+            throw new NullPointerException();
+        }
+
         return user;
     }
 

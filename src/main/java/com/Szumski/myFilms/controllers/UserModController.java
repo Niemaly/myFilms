@@ -1,8 +1,11 @@
 package com.Szumski.myFilms.controllers;
 
+import com.Szumski.myFilms.exceptions.AddMovieTroubleException;
 import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.frontendComunication.ResponseForUserMovies;
+import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,22 +24,31 @@ public class UserModController {
   @Autowired
   private UserMoviesService userMoviesService;
 
+  @Autowired
+  private MovieRepository movieRepository;
+
 
   @RequestMapping(value = "/add_movie", method = RequestMethod.POST)
-  public ResponseEntity<MovieModel> addFilmToUser(@RequestParam UserMovie userMovie, @AuthenticationPrincipal User user){
+  public ResponseForUserMovies addFilmToUser(@RequestParam UserMovie userMovie, @AuthenticationPrincipal User user){
 
 
-      boolean isMovieExist = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getId()==userMovie.getId());
 
-      if (isMovieExist){
-          return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-      }
       try {
-      } catch (NullPointerException e){
-          return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+
+          boolean isMovieExist = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getId()==userMovie.getId());
+
+          if (isMovieExist){
+
+              return new ResponseForUserMovies(movieRepository.findById(userMovie.getId()).get(),userMovie);
+          }
+
+
+      } catch (Exception e){
+        throw new AddMovieTroubleException();
       }
 
       return null;
+
   }
 
     @RequestMapping(value = "/delete_movie", method = RequestMethod.GET)

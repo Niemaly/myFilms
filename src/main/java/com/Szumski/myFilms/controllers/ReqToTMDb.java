@@ -1,10 +1,10 @@
 package com.Szumski.myFilms.controllers;
 
+import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
 import com.Szumski.myFilms.model.frontendComunication.ResponseAllFilms;
-import com.Szumski.myFilms.model.parsers.FilmParser;
-import com.Szumski.myFilms.model.parsers.UrlGenerator;
 
+import com.Szumski.myFilms.model.parsers.*;
 import com.Szumski.myFilms.model.pojo.tmdbSearchListspojo.AllList;
 import com.Szumski.myFilms.model.pojo.tmdbpojo.MovieTMDb;
 import com.Szumski.myFilms.repository.MovieRepository;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 
-@RestController("/")
+@RestController()
 public class ReqToTMDb {
 
     @Value("${api.key}")
@@ -23,25 +23,24 @@ public class ReqToTMDb {
     @Value("${language.en}")
     private String language;
 
-    @Autowired
     private RestTemplate restTemplate;
+    private MovieRepository movieRepository;
+    private AllList allList;
+
 
     @Autowired
-    MovieRepository movieRepository;
-
-
-
+    public ReqToTMDb(RestTemplate restTemplate, MovieRepository movieRepository) {
+        this.restTemplate = restTemplate;
+        this.movieRepository = movieRepository;
+    }
 
     @ResponseBody
     @RequestMapping("/upcoming")
     public ResponseAllFilms getUpcoming(){
 
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
+        AllList allList = returnAllList(urlGenerator);
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.getUpcoming("1"),
-                AllList.class
-        );
 
         return new ResponseAllFilms(allList);
     }
@@ -53,10 +52,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="1";
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.getNowPlaying(page),
-                AllList.class
-        );
+        AllList allList = returnAllList(urlGenerator);
 
         return new ResponseAllFilms(allList);
     }
@@ -67,10 +63,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="37";
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.getPopular(page),
-                AllList.class
-        );
+        AllList allList = returnAllList(urlGenerator);
 
         return new ResponseAllFilms(allList);
     }
@@ -82,10 +75,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="1";
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.getSimilarMovies(movieId, page),
-                AllList.class
-        );
+        AllList allList = returnAllList(urlGenerator);
 
         return new ResponseAllFilms(allList);
     }
@@ -97,10 +87,7 @@ public class ReqToTMDb {
     public ResponseAllFilms getRecommendations(@PathVariable("movieId") String movieId, @PathVariable("page") String page){
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.getRecommendations(movieId, page),
-                AllList.class
-        );
+        AllList allList = returnAllList(urlGenerator);
 
         return new ResponseAllFilms(allList);
     }
@@ -116,6 +103,7 @@ public class ReqToTMDb {
         );
 
         movieRepository.save(FilmParser.parseToMovieModel(movie));
+
         return movie;
     }
 
@@ -124,10 +112,8 @@ public class ReqToTMDb {
     public ResponseAllFilms searchMovie(@RequestParam MovieQuery movieQuery){
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
 
-        AllList allList = restTemplate.getForObject(
-                urlGenerator.searchMovie(movieQuery),
-                AllList.class
-        );
+        AllList allList = returnAllList(urlGenerator);
+
         ResponseAllFilms responseAllFilms = new ResponseAllFilms(allList);
 
         responseAllFilms.getListOfMovies().forEach(movie ->{
@@ -139,6 +125,15 @@ public class ReqToTMDb {
                 });
 
         return responseAllFilms;
+    }
+
+    private AllList returnAllList(UrlGenerator urlGenerator){
+
+
+        return restTemplate.getForObject(
+                urlGenerator.getUpcoming("1"),
+                AllList.class
+        );
     }
 
 
