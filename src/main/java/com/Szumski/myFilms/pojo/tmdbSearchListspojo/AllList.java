@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 public class AllList {
-    List<ListElementMovie> results;
+
+    private List<ListElementMovie> results;
     private Integer page;
     private Integer total_results;
     private Dates dates;

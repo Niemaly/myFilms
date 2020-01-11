@@ -30,7 +30,7 @@ public class UserMoviesList {
     public void deleteFilmFromList(Long movieId){
         int index=-1;
         for (int i = 0; i <listOfMovies.size() ; i++) {
-            if (movieId==listOfMovies.get(i).getMovieId())
+            if (movieId==listOfMovies.get(i).getId())
                 index=i;
         }
         if (index!=-1) {
@@ -74,7 +74,7 @@ public class UserMoviesList {
     public void changeMovieStatus(Long movieId) {
         int index=-1;
         for (int i = 0; i <listOfMovies.size() ; i++) {
-            if (movieId==listOfMovies.get(i).getMovieId())
+            if (movieId==listOfMovies.get(i).getId())
                 index=i;
         }
 

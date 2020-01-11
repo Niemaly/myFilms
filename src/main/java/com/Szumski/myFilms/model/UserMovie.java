@@ -4,25 +4,25 @@ import java.util.Objects;
 
 public class UserMovie {
 
-    private Long movieId;
+    private Long id;
     private String comment;
     private double rating;
     boolean status;
 
-    public UserMovie(Long filmId) {
-        this.movieId = filmId;
+    public UserMovie(Long id) {
+        this.id = id;
     }
 
     public UserMovie() {
     }
 
 
-    public Long getMovieId() {
-        return movieId;
+    public Long getId() {
+        return id;
     }
 
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getComment() {
@@ -54,7 +54,7 @@ public class UserMovie {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserMovie userMovie = (UserMovie) o;
-        return movieId == userMovie.movieId &&
+        return id == userMovie.id &&
                 Double.compare(userMovie.rating, rating) == 0 &&
                 status == userMovie.status &&
                 Objects.equals(comment, userMovie.comment);
@@ -62,6 +62,6 @@ public class UserMovie {
 
     @Override
     public int hashCode() {
-        return Objects.hash(movieId, comment, rating, status);
+        return Objects.hash(id, comment, rating, status);
     }
 }

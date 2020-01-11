@@ -17,7 +17,7 @@ public class ResponseForUserMovies{
 
     public ResponseForUserMovies(MovieModel model,UserMovie userMovie) {
 
-        this.id = userMovie.getMovieId();
+        this.id = userMovie.getId();
         this.comment = userMovie.getComment();
         this.ratingUser = userMovie.getRating();
         this.status = userMovie.getStatus();

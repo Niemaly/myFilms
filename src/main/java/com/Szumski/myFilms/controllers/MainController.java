@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 @RestController
 @RequestMapping
@@ -42,7 +41,7 @@ public class MainController {
 
         // FROM USER REPO TAKE USER by ID -> eq to current user -> take data
         userMoviesService.getAllMovies(user.getIdFilmList()).stream().forEach(element -> {
-                    listOfFilms.add(new ResponseForUserMovies(movieRepository.findById((long)element.getMovieId()).get(), element));
+                    listOfFilms.add(new ResponseForUserMovies(movieRepository.findById((long)element.getId()).get(), element));
                 });
 
         return listOfFilms;

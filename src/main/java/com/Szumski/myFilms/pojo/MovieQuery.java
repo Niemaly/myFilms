@@ -1,12 +1,12 @@
 package com.Szumski.myFilms.pojo;
 
 public class MovieQuery {
-    Integer page;
-    Boolean include_adult;
-    String region;
-    String year;
-    String primary_release_year;
-    String query;
+    private Integer page;
+    private Boolean include_adult;
+    private String region;
+    private String year;
+    private String primary_release_year;
+    private String query;
 
     public String getQuery() {
         return query;

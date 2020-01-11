@@ -26,7 +26,7 @@ public class UserModController {
   public ResponseEntity<MovieModel> addFilmToUser(@RequestParam UserMovie userMovie, @AuthenticationPrincipal User user){
 
 
-      boolean isMovieExist = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getMovieId()==userMovie.getMovieId());
+      boolean isMovieExist = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getId()==userMovie.getId());
 
       if (isMovieExist){
           return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
