@@ -1,6 +1,6 @@
 package com.Szumski.myFilms.service;
 
-import com.Szumski.myFilms.model.User;
+import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

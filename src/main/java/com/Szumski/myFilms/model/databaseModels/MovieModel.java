@@ -1,4 +1,4 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.databaseModels;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

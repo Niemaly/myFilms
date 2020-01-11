@@ -1,7 +1,7 @@
-package com.Szumski.myFilms.parsers;
+package com.Szumski.myFilms.model.parsers;
 
 
-import com.Szumski.myFilms.pojo.MovieQuery;
+import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
 
 public class UrlGenerator {
 

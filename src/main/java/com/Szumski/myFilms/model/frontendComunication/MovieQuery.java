@@ -1,4 +1,4 @@
-package com.Szumski.myFilms.pojo;
+package com.Szumski.myFilms.model.frontendComunication;
 
 public class MovieQuery {
     private Integer page;

@@ -1,12 +1,12 @@
 package com.Szumski.myFilms.controllers;
 
-import com.Szumski.myFilms.model.*;
+import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
+import com.Szumski.myFilms.model.frontendComunication.ResponseAllFilms;
+import com.Szumski.myFilms.model.parsers.FilmParser;
+import com.Szumski.myFilms.model.parsers.UrlGenerator;
 
-import com.Szumski.myFilms.parsers.FilmParser;
-import com.Szumski.myFilms.parsers.UrlGenerator;
-import com.Szumski.myFilms.pojo.MovieQuery;
-import com.Szumski.myFilms.pojo.tmdbSearchListspojo.AllList;
-import com.Szumski.myFilms.pojo.tmdbpojo.MovieTMDb;
+import com.Szumski.myFilms.model.pojo.tmdbSearchListspojo.AllList;
+import com.Szumski.myFilms.model.pojo.tmdbpojo.MovieTMDb;
 import com.Szumski.myFilms.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

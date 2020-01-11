@@ -1,7 +1,7 @@
 package com.Szumski.myFilms.configuration;
 
-import com.Szumski.myFilms.model.MovieModel;
-import com.Szumski.myFilms.model.User;
+import com.Szumski.myFilms.model.databaseModels.MovieModel;
+import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.model.UserMovie;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;

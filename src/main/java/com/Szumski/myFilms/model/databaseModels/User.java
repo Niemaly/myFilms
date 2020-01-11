@@ -1,5 +1,6 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.databaseModels;
 
+import com.Szumski.myFilms.model.AutoincrementId;
 import com.Szumski.myFilms.repository.UserMoviesListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;

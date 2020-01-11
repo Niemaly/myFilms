@@ -1,7 +1,8 @@
 package com.Szumski.myFilms.controllers;
 
-import com.Szumski.myFilms.model.ResponseForUserMovies;
-import com.Szumski.myFilms.model.User;
+import com.Szumski.myFilms.exceptions.MovieIsNotExistInDatabaseException;
+import com.Szumski.myFilms.model.frontendComunication.ResponseForUserMovies;
+import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,12 @@ public class MainController {
                 });
 
         return listOfFilms;
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String exceptionHandlerCheck(){
+
+        throw new NullPointerException();
     }
 
 

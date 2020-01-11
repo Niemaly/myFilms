@@ -1,6 +1,7 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.databaseModels;
 
 import com.Szumski.myFilms.exceptions.MovieIsNotExistInDatabaseException;
+import com.Szumski.myFilms.model.UserMovie;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

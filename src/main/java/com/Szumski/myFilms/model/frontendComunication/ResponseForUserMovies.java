@@ -1,4 +1,7 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.frontendComunication;
+
+import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.databaseModels.MovieModel;
 
 import java.util.List;
 
@@ -15,7 +18,7 @@ public class ResponseForUserMovies{
     private String dateOfRelease;
     private List<Integer> genreIdList;
 
-    public ResponseForUserMovies(MovieModel model,UserMovie userMovie) {
+    public ResponseForUserMovies(MovieModel model, UserMovie userMovie) {
 
         this.id = userMovie.getId();
         this.comment = userMovie.getComment();

@@ -1,4 +1,4 @@
-package com.Szumski.myFilms.pojo.tmdbSearchListspojo;
+package com.Szumski.myFilms.model.pojo.tmdbSearchListspojo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,8 +1,8 @@
-package com.Szumski.myFilms.parsers;
+package com.Szumski.myFilms.model.parsers;
 
-import com.Szumski.myFilms.model.MovieModel;
-import com.Szumski.myFilms.pojo.tmdbSearchListspojo.ListElementMovie;
-import com.Szumski.myFilms.pojo.tmdbpojo.MovieTMDb;
+import com.Szumski.myFilms.model.databaseModels.MovieModel;
+import com.Szumski.myFilms.model.pojo.tmdbSearchListspojo.ListElementMovie;
+import com.Szumski.myFilms.model.pojo.tmdbpojo.MovieTMDb;
 
 import java.util.ArrayList;
 import java.util.List;
