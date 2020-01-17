@@ -1,6 +1,6 @@
 package com.Szumski.myFilms.model.frontendComunication;
 
-import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.databaseModels.UserMovie;
 import com.Szumski.myFilms.model.databaseModels.MovieModel;
 
 import java.util.List;

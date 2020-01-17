@@ -9,6 +9,9 @@ public class UrlGenerator {
     private String apiKey;
     private String language;
 
+    public UrlGenerator() {
+    }
+
     public UrlGenerator(String apiKey, String language) {
         this.apiKey = apiKey;
         this.language = language;

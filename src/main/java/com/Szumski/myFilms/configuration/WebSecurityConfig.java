@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/userDetails").hasAuthority("USER")
                 .antMatchers("/filmsWatched").hasAuthority("USER")
                 .antMatchers("/filmsToWatch").hasAuthority("USER")
+                .antMatchers("/search").permitAll()
                 .anyRequest().permitAll()
                 .and().formLogin().permitAll()
                 .and().csrf().disable();

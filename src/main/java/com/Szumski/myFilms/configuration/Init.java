@@ -2,11 +2,13 @@ package com.Szumski.myFilms.configuration;
 
 import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.databaseModels.User;
-import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.databaseModels.UserMovie;
+import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
 
@@ -101,5 +103,10 @@ public class Init {
 
         return list;
 
+    }
+
+    @Bean
+    public MovieQuery movieQuery(){
+        return new MovieQuery(1, true, "Poland", "2000", "2001", "Terminator");
     }
 }

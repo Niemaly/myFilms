@@ -1,6 +1,5 @@
 package com.Szumski.myFilms.controllers;
 
-import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
 import com.Szumski.myFilms.model.frontendComunication.ResponseAllFilms;
 
@@ -10,6 +9,7 @@ import com.Szumski.myFilms.model.pojo.tmdbpojo.MovieTMDb;
 import com.Szumski.myFilms.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -29,17 +29,21 @@ public class ReqToTMDb {
 
 
     @Autowired
-    public ReqToTMDb(RestTemplate restTemplate, MovieRepository movieRepository) {
+    public ReqToTMDb(RestTemplate restTemplate, MovieRepository movieRepository)  {
         this.restTemplate = restTemplate;
         this.movieRepository = movieRepository;
     }
+
+
 
     @ResponseBody
     @RequestMapping("/upcoming")
     public ResponseAllFilms getUpcoming(){
 
+        String page="1";
+
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.getUpcoming(page));
 
 
         return new ResponseAllFilms(allList);
@@ -52,7 +56,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="1";
 
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.getNowPlaying(page));
 
         return new ResponseAllFilms(allList);
     }
@@ -63,7 +67,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="37";
 
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.getPopular(page));
 
         return new ResponseAllFilms(allList);
     }
@@ -75,7 +79,7 @@ public class ReqToTMDb {
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
         page="1";
 
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.getSimilarMovies(movieId, page));
 
         return new ResponseAllFilms(allList);
     }
@@ -87,7 +91,7 @@ public class ReqToTMDb {
     public ResponseAllFilms getRecommendations(@PathVariable("movieId") String movieId, @PathVariable("page") String page){
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
 
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.getRecommendations(movieId,page));
 
         return new ResponseAllFilms(allList);
     }
@@ -108,11 +112,27 @@ public class ReqToTMDb {
     }
 
     @ResponseBody
-    @RequestMapping("/search_movies")
-    public ResponseAllFilms searchMovie(@RequestParam MovieQuery movieQuery){
+    @RequestMapping(value = "/search_movies", method = RequestMethod.POST)
+    public ResponseAllFilms searchMovie(@RequestParam Integer page,
+                                        @RequestParam Boolean include_adult,
+                                        @RequestParam String  region,
+                                        @RequestParam String  year,
+                                        @RequestParam String  primary_release_year,
+                                        @RequestParam String  query) {
+
+        MovieQuery movieQuery = new MovieQuery();
+            movieQuery.setPage(page);
+            movieQuery.setInclude_adult(include_adult);
+            movieQuery.setRegion(region);
+            movieQuery.setYear(year);
+            movieQuery.setPrimary_release_year(primary_release_year);
+            movieQuery.setQuery(query);
+
+        System.out.println(movieQuery.toString());
+
         UrlGenerator urlGenerator = new UrlGenerator(apiKey, language);
 
-        AllList allList = returnAllList(urlGenerator);
+        AllList allList = returnAllList(urlGenerator.searchMovie(movieQuery));
 
         ResponseAllFilms responseAllFilms = new ResponseAllFilms(allList);
 
@@ -127,14 +147,26 @@ public class ReqToTMDb {
         return responseAllFilms;
     }
 
-    private AllList returnAllList(UrlGenerator urlGenerator){
+    private AllList returnAllList(String string){
 
 
         return restTemplate.getForObject(
-                urlGenerator.getUpcoming("1"),
+                string,
                 AllList.class
         );
     }
+
+
+
+    @ExceptionHandler(value = MissingServletRequestParameterException.class)
+    public Object exception(MissingServletRequestParameterException exception)  {
+
+        return new MovieQuery(1, true, "Poland", "2000", "2001", "Terminator");
+
+    }
+
+
+
 
 
 }

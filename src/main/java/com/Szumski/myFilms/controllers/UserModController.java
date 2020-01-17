@@ -1,15 +1,12 @@
 package com.Szumski.myFilms.controllers;
 
 import com.Szumski.myFilms.exceptions.AddMovieTroubleException;
-import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.databaseModels.User;
-import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.databaseModels.UserMovie;
 import com.Szumski.myFilms.model.frontendComunication.ResponseForUserMovies;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,19 +24,16 @@ public class UserModController {
   @Autowired
   private MovieRepository movieRepository;
 
-
   @RequestMapping(value = "/add_movie", method = RequestMethod.POST)
-  public ResponseForUserMovies addFilmToUser(@RequestParam UserMovie userMovie, @AuthenticationPrincipal User user){
-
-
+  public ResponseForUserMovies addFilmToUser(@RequestParam UserMovie userMovie, @AuthenticationPrincipal User user)  {
 
       try {
-
-          boolean isMovieExist = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getId()==userMovie.getId());
-
-          if (isMovieExist){
-
+          boolean isUserMovieExistInUserMovies = userMoviesService.getAllMovies(user.getIdFilmList()).stream().anyMatch(element-> element.getId()==userMovie.getId());
+          if (isUserMovieExistInUserMovies){
               return new ResponseForUserMovies(movieRepository.findById(userMovie.getId()).get(),userMovie);
+          } else {
+              userMoviesService.saveMovieToUser(userMovie,user);
+              System.out.println("movie is saved to user "+ user.getUsername()+ "  -- movie -- \n" + userMovie.toString());
           }
 
 
@@ -53,8 +47,13 @@ public class UserModController {
 
     @RequestMapping(value = "/delete_movie", method = RequestMethod.GET)
     public List<UserMovie> deleteMovieUser( @AuthenticationPrincipal User user){
-        int movieId =111;
+        Long movieId =111L;
+
+        System.out.println("movie is deleted from user " + user.getUsername() + " -- movie -- \n" + userMoviesService.getUserMoviesListRepository().findById(movieId));
+
         userMoviesService.deleteMovieFromUser(movieId);
+
+
         return userMoviesService.getAllMovies(user.getIdFilmList());
 
       }

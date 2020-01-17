@@ -1,6 +1,5 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.databaseModels;
 
-import com.Szumski.myFilms.repository.UserMoviesListRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;

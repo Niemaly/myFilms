@@ -1,4 +1,4 @@
-package com.Szumski.myFilms.model;
+package com.Szumski.myFilms.model.databaseModels;
 
 import java.util.Objects;
 
@@ -63,5 +63,15 @@ public class UserMovie {
     @Override
     public int hashCode() {
         return Objects.hash(id, comment, rating, status);
+    }
+
+    @Override
+    public String toString() {
+        return "UserMovie{" +
+                "id=" + id +
+                ", comment='" + comment + '\'' +
+                ", rating=" + rating +
+                ", status=" + status +
+                '}';
     }
 }

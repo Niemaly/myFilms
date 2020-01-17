@@ -1,7 +1,7 @@
 package com.Szumski.myFilms.service;
 
 import com.Szumski.myFilms.model.databaseModels.User;
-import com.Szumski.myFilms.model.UserMovie;
+import com.Szumski.myFilms.model.databaseModels.UserMovie;
 
 import com.Szumski.myFilms.model.databaseModels.UserMoviesList;
 import com.Szumski.myFilms.repository.UserMoviesListRepository;
@@ -56,7 +56,7 @@ public class UserMoviesService {
 
     public void deleteMovieFromUser(long id){
         if (user!=null) {
-            UserMoviesList userMoviesList =userMoviesListRepository.findById(user.getIdFilmList()).get();
+            UserMoviesList userMoviesList = userMoviesListRepository.findById(user.getIdFilmList()).get();
             userMoviesList.deleteFilmFromList(id);
             userMoviesListRepository.save(userMoviesList);
         } else{
