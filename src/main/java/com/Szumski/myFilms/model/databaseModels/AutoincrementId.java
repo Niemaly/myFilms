@@ -1,25 +1,27 @@
 package com.Szumski.myFilms.model.databaseModels;
 
+import com.Szumski.myFilms.repository.UserMoviesListRepository;
+import com.Szumski.myFilms.repository.UserRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@ComponentScan
 public class AutoincrementId {
 
-    private UserMoviesService userMoviesService;
+    private UserRepository userRepository;
 
-    @Autowired
-    public AutoincrementId(UserMoviesService userMoviesService) {
-        this.userMoviesService = userMoviesService;
+
+    public AutoincrementId(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public AutoincrementId() {
-    }
 
-    public Long movieListRepo() {
+    public Long createIdOfUserMoviesList() {
         try {
-            return userMoviesService.getUserMoviesListRepository().count();
+            return userRepository.count();
         }catch (NullPointerException e){
             return 0L;
         }

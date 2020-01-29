@@ -12,7 +12,8 @@ public class UserNotExistExceptionHandler {
     @ExceptionHandler(value = UserNotFoundException.class)
     public ResponseEntity<Object> exception(UserNotFoundException exception) {
 
-        return new ResponseEntity<>("NULL -> check wtf is wrong... plz dev make ur job...", HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("User not Found :O !!", HttpStatus.NOT_FOUND);
+
     }
 
 }

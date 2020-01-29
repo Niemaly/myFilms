@@ -3,12 +3,10 @@ package com.Szumski.myFilms.configuration;
 import com.Szumski.myFilms.model.databaseModels.MovieModel;
 import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.model.databaseModels.UserMovie;
-import com.Szumski.myFilms.model.frontendComunication.MovieQuery;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
 
@@ -27,28 +25,34 @@ public class Init {
         this.userMoviesService = userMoviesService;
         this.webSecurityConfig = webSecurityConfig;
         this.movieRepository = movieRepository;
+
     }
 
     @EventListener(ApplicationReadyEvent.class)
     private void setSomeUsers() {
-        User user1 = new User("user", webSecurityConfig.passwordEncoder().encode("user"), "USER");
-        User user2 = new User("u", webSecurityConfig.passwordEncoder().encode("user"), "USER");
-        User user3 = new User("useruser", webSecurityConfig.passwordEncoder().encode("user"), "USER");
-
-        System.out.println(user1.getUsername());
-        System.out.println(user2.getUsername());
-        System.out.println(user3.getUsername());
 
         userMoviesService.getUserRepository().deleteAll();
+        userMoviesService.getUserMoviesListRepository().deleteAll();
+
+        User user1 = new User("user", webSecurityConfig.passwordEncoder().encode("user"), "USER");
 
         userMoviesService.setUser(user1);
         userMoviesService.createNewUser(user1);
 
+        User user2 = new User("u", webSecurityConfig.passwordEncoder().encode("user"), "USER");
+
         userMoviesService.setUser(user2);
         userMoviesService.createNewUser(user2);
 
+        User user3 = new User("useruser", webSecurityConfig.passwordEncoder().encode("user"), "USER");
+
         userMoviesService.setUser(user3);
         userMoviesService.createNewUser(user3);
+
+
+        System.out.println(user1.toString());
+        System.out.println(user2.toString());
+        System.out.println(user3.toString());
 
 
         List<UserMovie> userMoviesList1 = userMoviesService.getAllMovies(user1.getIdFilmList());
@@ -105,8 +109,4 @@ public class Init {
 
     }
 
-    @Bean
-    public MovieQuery movieQuery(){
-        return new MovieQuery(1, true, "Poland", "2000", "2001", "Terminator");
-    }
 }

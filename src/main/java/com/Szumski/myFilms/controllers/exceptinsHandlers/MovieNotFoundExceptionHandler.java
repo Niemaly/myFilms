@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class MovieNotFoundExceptionHandler {
 
     @ExceptionHandler(value = MovieIsNotExistInDatabaseException.class)
-    public ResponseEntity<Object> exception(MovieIsNotExistInDatabaseException exception) {
-        return new ResponseEntity<>("Movie not found", HttpStatus.NOT_FOUND);
+    public String exception(MovieIsNotExistInDatabaseException exception) {
+        return "{\"status\":true}";
     }
 }

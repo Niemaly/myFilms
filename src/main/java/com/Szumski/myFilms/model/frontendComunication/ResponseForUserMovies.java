@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ResponseForUserMovies{
 
-    private long id;
+    private Long id;
     private String comment;
     private String overview;
     private double ratingUser;
@@ -17,6 +17,10 @@ public class ResponseForUserMovies{
     private Double rating;
     private String dateOfRelease;
     private List<Integer> genreIdList;
+
+
+    public ResponseForUserMovies() {
+    }
 
     public ResponseForUserMovies(MovieModel model, UserMovie userMovie) {
 
@@ -40,11 +44,11 @@ public class ResponseForUserMovies{
         this.overview = overview;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

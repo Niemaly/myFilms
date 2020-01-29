@@ -3,7 +3,6 @@ package com.Szumski.myFilms.model.databaseModels;
 import com.Szumski.myFilms.exceptions.MovieIsNotExistInDatabaseException;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -24,13 +23,15 @@ public class UserMoviesList {
 
         if(!listOfMovies.contains(userFilm)) {
             listOfMovies.add(userFilm);
+        } else {
+            throw new RuntimeException();
         }
     }
 
     public void deleteFilmFromList(Long movieId){
         int index=-1;
         for (int i = 0; i <listOfMovies.size() ; i++) {
-            if (movieId==listOfMovies.get(i).getId())
+            if (movieId.equals(listOfMovies.get(i).getId()))
                 index=i;
         }
         if (index!=-1) {
@@ -38,6 +39,18 @@ public class UserMoviesList {
         } else {
             throw new MovieIsNotExistInDatabaseException();
         }
+    }
+
+    public boolean isMovieInList(Long movieId){
+
+
+        if (listOfMovies.stream().filter(element -> element.getId().equals(movieId)).count()>0) {
+            System.out.println("movie id: " + movieId+ "is already in user database");
+            return true;
+        }
+
+        return false;
+
     }
 
 

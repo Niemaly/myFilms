@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form class="form" method="post" action="http://127.0.0.1:8080/recommendations">
+    <select class="selectAction" required>
+        <option value="recommendations">recommendations</option>
+        <option value="movie_details">movie_details</option>
+        <option value="upcoming" >upcoming</option>
+        <option value="now_playing">now_playing</option>
+        <option value="popular">popular</option>
+        <option value="similar_movie">similar_movies</option>
+        <option value="movie_details" >movie_details</option>
+    </select>
+    szukaj:
+    page <input type="text" name="page"><br/>
+    movieId <input type="text" name="movieId"><br/>
+    <input type="submit" value="wyślij">
+</form>
+
+<script>
+    const action = 'http://127.0.0.1:8080/'
+    const form = document.querySelector('.form')
+
+    document.querySelector('.selectAction').addEventListener('change', e => {
+        const newTarget = e.target.value
+        form.setAttribute('action', action + newTarget)
+    })
+</script>
+
+</body>
+</html>

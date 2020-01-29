@@ -1,0 +1,1780 @@
+@import url(https://fonts.googleapis.com/css?family=Rasa:400,500,700&display=swap&subset=latin-ext);
+/*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
+/* Document
+   ========================================================================== */
+/**
+ * Use a better box model (opinionated).
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+/**
+ * Use a more readable tab size (opinionated).
+ */
+:root {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4; }
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct height in Firefox.
+ */
+hr {
+  height: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Add the correct text decoration in Chrome, Edge, and Safari.
+ */
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp,
+pre {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Remove the inheritance of text transform in Edge and Firefox.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
+ */
+legend {
+  padding: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome and Firefox.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Chrome and Safari.
+ */
+summary {
+  display: list-item; }
+
+html {
+  font-size: 16px; }
+  @media only screen and (min-width: 550px) {
+    html {
+      font-size: 18px; } }
+  @media only screen and (min-width: 1024px) {
+    html {
+      font-size: 18px; } }
+  @media only screen and (min-width: 1800px) {
+    html {
+      font-size: 20px; } }
+  @media only screen and (min-width: 2200px) {
+    html {
+      font-size: 20px; } }
+  @media only screen and (min-width: 2600px) {
+    html {
+      font-size: 22px; } }
+
+body {
+  margin: 0;
+  font-family: "Rasa", serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  margin: 0.8em 0;
+  font-family: "Rasa", serif; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 1.9rem; }
+
+h3 {
+  font-size: 1.75rem; }
+
+h4 {
+  font-size: 1.55rem; }
+
+h5 {
+  font-size: 1.55rem; }
+
+h6 {
+  font-size: 1.55rem; }
+
+p {
+  line-height: 1.5em; }
+
+body, button, input, optgroup, select, textarea {
+  font-family: "Rasa", serif; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+@media only screen and (min-width: 1024px) {
+  h2 {
+    font-size: 2.2em; } }
+
+@-webkit-keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%); }
+  25% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%); }
+  50% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%); }
+  75% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%); }
+  25% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%); }
+  50% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%); }
+  75% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+.root {
+  background-color: #1F0322;
+  color: white;
+  overflow-x: hidden;
+  position: relative; }
+
+.main {
+  height: 85%; }
+
+.nav {
+  width: 100%;
+  max-width: 1400px;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 90%; }
+  .content_bar {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 5px;
+    background-color: #F2A359; }
+    .content_bar.-n2 {
+      -webkit-box-ordinal-group: 4;
+          -ms-flex-order: 3;
+              order: 3; }
+  .content_resultContainer {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
+    margin: 0 5px;
+    background-color: white;
+    padding: 5px 15px;
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 50px; }
+  .content_result {
+    color: #1F0322; }
+
+.logo {
+  font-size: 1em;
+  font-weight: normal;
+  padding: 0;
+  margin: 0; }
+  .logo_link {
+    text-decoration: none;
+    color: white; }
+  .logo_textFancy {
+    color: #F2A359; }
+
+.settings {
+  position: relative;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+  .settings:hover .settings_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .settings_trigger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    color: #F2A359;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.5em;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    cursor: pointer; }
+    .settings_trigger:hover, .settings_trigger:focus {
+      opacity: .8; }
+      .settings_trigger:hover .settings_content, .settings_trigger:focus .settings_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+  .settings_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: #F2A359;
+    padding: 20px;
+    color: #1F0322;
+    border: 1px solid #1F0322; }
+  .settings_username, .settings_logout, .settings_login {
+    width: 100%;
+    max-width: 150px;
+    border: 0;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    color: #1F0322;
+    border: 1px solid #1F0322;
+    background-color: transparent;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer; }
+  .settings_username, .settings_login:first-child {
+    margin-bottom: 10px; }
+    .settings_username:hover, .settings_username:focus, .settings_login:first-child:hover, .settings_login:first-child:focus {
+      background-color: #f6bd88; }
+  .settings_logout, .settings_login:last-child {
+    color: white;
+    background-color: #1F0322; }
+    .settings_logout:hover, .settings_logout:focus, .settings_login:last-child:hover, .settings_login:last-child:focus {
+      background-color: #4a0751; }
+
+.view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 5px 10px;
+  margin: 0 auto; }
+  .view_button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: .5em 1em;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s; }
+    .view_button:hover, .view_button:focus {
+      background-color: rgba(255, 255, 255, 0.5); }
+    @media only screen and (min-width: 768px) {
+      .view_button {
+        width: 150px; } }
+    .view_button.-toWatch {
+      margin: 0 5px; }
+    .view_button.-active {
+      background-color: #F2A359;
+      color: #1F0322;
+      border-color: #F2A359;
+      cursor: default; }
+    .view_button.-inactive {
+      opacity: .4; }
+  .view_icon {
+    margin-right: .7em;
+    font-size: .8em; }
+
+.footer {
+  width: 100%;
+  max-width: 1400px;
+  text-align: right;
+  font-size: .8em;
+  margin: 0 auto; }
+  .footer_dataSource {
+    margin-right: 10px; }
+
+.result {
+  display: none; }
+  .result.-active {
+    display: block; }
+  .result_header {
+    padding: .5em 0;
+    border-bottom: 1px solid #1F0322; }
+  .result_heading {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em; }
+  .result_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+    .result_box.-hideWatched .movie.-watched {
+      display: none; }
+    .result_box.-hideToWatch .movie.-toWatch {
+      display: none; }
+  .result_movie {
+    margin: 1em; }
+
+.movie {
+  background-color: #1F0322;
+  color: white;
+  border-top: 6px solid #F2A359;
+  width: 240px;
+  overflow: hidden;
+  position: relative; }
+  .movie_heading {
+    margin: 0;
+    padding: .2em;
+    line-height: 1.2em;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: white;
+    padding: 0; }
+  .movie_headingLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    min-height: 2.8em;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #1F0322;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    padding: .3em .4em; }
+    .movie_headingLink:hover {
+      background-color: #340539;
+      text-decoration: underline; }
+  .movie_box {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    overflow: hidden;
+    border-right: 1px solid #1F0322;
+    border-left: 1px solid #1F0322;
+    height: 360px; }
+    .movie_box * {
+      position: relative;
+      z-index: 5; }
+  .movie_img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transition: -webkit-filter 0.6s;
+    transition: -webkit-filter 0.6s;
+    transition: filter 0.6s;
+    transition: filter 0.6s, -webkit-filter 0.6s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-transition: 0.6s;
+    transition: 0.6s; }
+  .movie_box:hover .movie_img {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+  .movie_box:hover .movie_speedOverview,
+  .movie_box:focus .movie_speedOverview {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); }
+  .movie_box:hover .movie_detailsBtn,
+  .movie_box:focus .movie_detailsBtn {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); }
+  .movie_speedOverview {
+    width: 100%;
+    height: 50px;
+    color: #1F0322;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    text-align: center;
+    border: 0;
+    font-size: 1.4em;
+    border-top: 1px solid #1F0322;
+    border-bottom: 1px solid #1F0322;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0); }
+    .movie_speedOverview.-active {
+      opacity: 1;
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1); }
+    .movie_speedOverview:hover, .movie_speedOverview:focus {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      opacity: 1; }
+  .movie_detailsBtn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1F0322;
+    color: white;
+    border-top: 1px solid #F2A359;
+    border: 0;
+    font-size: 1.4em;
+    padding: .5em;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    transition: 0.3s;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center; }
+    .movie_detailsBtn:hover, .movie_detailsBtn:focus {
+      color: #F2A359;
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1); }
+  .movie_bar {
+    width: 100%;
+    border-right: 1px solid #1F0322;
+    border-left: 1px solid #1F0322;
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    color: #1F0322; }
+    .movie_bar.-watched, .movie_bar.-toWatch, .movie_bar.-searchItem {
+      font-size: 1.4em; }
+    .movie_bar.-watched {
+      background-color: rgba(242, 163, 89, 0.9); }
+      .movie_bar.-watched button {
+        color: #1F0322; }
+    .movie_bar.-toWatch {
+      background-color: rgba(255, 255, 255, 0.8); }
+      .movie_bar.-toWatch button {
+        color: #1F0322; }
+    .movie_bar.-searchItem {
+      background-color: rgba(31, 3, 34, 0.8); }
+      .movie_bar.-searchItem button {
+        color: #F2A359; }
+  .movie_statusActions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .movie_button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+    .movie_button:hover, .movie_button:focus {
+      opacity: .5; }
+    .movie_button.-watched {
+      margin-right: 10px; }
+  .movie_info {
+    color: white; }
+  .movie_userRating {
+    font-size: .9em; }
+  .movie_rating, .movie_userRating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .movie_rating {
+    color: #F2A359; }
+  .movie_userRatingStar, .movie_ratingStar {
+    font-size: .6em;
+    margin-left: .4em; }
+
+.details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 900px;
+  background-color: #f4b071;
+  color: #1F0322;
+  z-index: 120;
+  padding: 25px 0 25px 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateX(calc(100% + 50px));
+          transform: translateX(calc(100% + 50px));
+  border: 1px solid #1F0322;
+  -webkit-box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.25); }
+  @media only screen and (min-width: 1024px) {
+    .details {
+      padding: 25px 0 25px 50px; } }
+  .details.-trailers {
+    height: calc(100% - 1px);
+    background-color: #1F0322;
+    color: white;
+    border: 1px solid white;
+    top: 0;
+    right: 1px; }
+  .details.-prompt {
+    background-color: white;
+    color: #1F0322;
+    border: 1px solid #1F0322; }
+  .details.-active {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  .details_content {
+    overflow-y: auto;
+    overflow-x: visible;
+    height: 100%;
+    padding: 0 30px; }
+  .details_closeButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    font-size: 2em;
+    position: absolute;
+    top: calc(50% - 45px);
+    height: 70px;
+    width: 45px;
+    right: 5px;
+    border: 1px solid #1F0322;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+    background: #ee892a;
+    -webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.25);
+            box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.25); }
+    @media only screen and (min-width: 1024px) {
+      .details_closeButton {
+        left: -35px;
+        height: 90px;
+        width: 70px; } }
+    .details_closeButton:hover, .details_closeButton:focus {
+      background: #f9d7b8; }
+    .details_closeButton.-trailers {
+      border: 1px solid white;
+      color: white;
+      background: #4a0751; }
+      .details_closeButton.-trailers:hover, .details_closeButton.-trailers:focus {
+        background: #740b80; }
+    .details_closeButton.-prompt {
+      background: #f9d7b8;
+      color: #1F0322;
+      border: 1px solid #1F0322; }
+      .details_closeButton.-prompt:hover, .details_closeButton.-prompt:focus {
+        background-color: white; }
+
+.search_tag {
+  background-color: #F2A359;
+  border: none;
+  padding: .1em .4em;
+  font-size: 2em;
+  color: #1F0322;
+  cursor: pointer;
+  margin: 1px; }
+  .search_tag:hover, .search_tag:focus {
+    background-color: #f6bd88;
+    outline: none; }
+  .search_tag.-active {
+    background-color: #1F0322;
+    color: white; }
+
+.search_target {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: none;
+  background-color: #f9d7b8;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  width: 100%; }
+  .search_target.-active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+
+.search_nextPage {
+  width: 100%;
+  height: 80px;
+  border: none;
+  font-size: 2em;
+  background-color: #F2A359;
+  border-top: 1px solid #F2A359;
+  color: #1F0322;
+  cursor: pointer;
+  -webkit-box-ordinal-group: 900001;
+      -ms-flex-order: 900000;
+          order: 900000;
+  -webkit-transition: background 0.3s, opacity 0.3s;
+  transition: background 0.3s, opacity 0.3s;
+  margin-top: 30px;
+  visibility: hidden; }
+  .search_nextPage.-active {
+    visibility: visible; }
+  .search_nextPage:hover, .search_nextPage:focus {
+    background-color: transparent;
+    opacity: .9; }
+
+.search_info {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: -0;
+          order: -0;
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #1F0322;
+  color: white;
+  padding: .2em .5em;
+  display: none; }
+  .search_info.-active {
+    display: block; }
+  .search_info h2,
+  .search_info p {
+    margin: 0;
+    padding: 0; }
+  .search_info p {
+    font-size: .8em; }
+  .search_info span {
+    color: #F2A359;
+    font-size: 1.4em; }
+
+.loginInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: #1F0322; }
+  .loginInfo_heading {
+    font-size: 2.4em; }
+  .loginInfo_registerText {
+    font-size: 1.4em;
+    margin: 1em 0 0 0; }
+  .loginInfo_login, .loginInfo_register {
+    font-size: 1.2em;
+    padding: .5em 1em;
+    border: 0;
+    width: 200px;
+    max-width: 100%;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  .loginInfo_login {
+    background-color: #fdf2fe;
+    color: #1F0322; }
+    .loginInfo_login:hover, .loginInfo_login:focus {
+      background-color: #1F0322;
+      color: white; }
+  .loginInfo_register {
+    background-color: #fdf2e7;
+    color: #1F0322; }
+    .loginInfo_register:hover, .loginInfo_register:focus {
+      background-color: #F2A359; }
+
+.login {
+  color: #1F0322;
+  text-align: center; }
+  .login_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .login_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-bottom: 1em;
+    font-size: 1.2em; }
+  .login_input {
+    width: 250px;
+    max-width: 100%;
+    font-size: 1.2em;
+    padding: .4em 1em; }
+  .login_send {
+    font-size: 1.2em;
+    padding: .5em 1em;
+    border: 0;
+    width: 250px;
+    max-width: 100%;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background-color: #fdf2fe;
+    color: #1F0322; }
+    .login_send:hover, .login_send:focus {
+      background-color: #1F0322;
+      color: white; }
+  .login_error {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 1em; }
+
+.register {
+  color: #1F0322;
+  text-align: center; }
+  .register_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .register_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-bottom: 1em;
+    font-size: 1.2em; }
+  .register_input {
+    width: 250px;
+    max-width: 100%;
+    font-size: 1.2em;
+    padding: .4em 1em; }
+  .register_send {
+    font-size: 1.2em;
+    padding: .5em 1em;
+    border: 0;
+    width: 250px;
+    max-width: 100%;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background-color: #fdf2fe;
+    color: #1F0322; }
+    .register_send:hover, .register_send:focus {
+      background-color: #1F0322;
+      color: white; }
+  .register_error {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 1em; }
+
+.searchForm {
+  margin: 0;
+  padding: 1em 0;
+  padding-bottom: calc(1em - 10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #e6e6e6;
+  padding-left: 10px; }
+  .searchForm_item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 160px; }
+    .searchForm_item.-year {
+      width: 50px; }
+    .searchForm_item.-includeAdult {
+      height: 30px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      width: 150px;
+      background-color: #fdf2e7; }
+      .searchForm_item.-includeAdult input {
+        width: 25px; }
+      .searchForm_item.-includeAdult p {
+        background-color: transparent;
+        opacity: .5;
+        font-size: .9em; }
+    .searchForm_item p {
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+      background-color: #F2A359;
+      font-size: 1em; }
+      @media only screen and (min-width: 1024px) {
+        .searchForm_item p {
+          font-size: .9em; } }
+  .searchForm_input {
+    width: 100%;
+    height: 30px;
+    background-color: #fdf2e7;
+    border: 0;
+    padding-left: 5px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    .searchForm_input:focus {
+      background-color: #fbe5cf; }
+    .searchForm_input.-region {
+      font-size: .8em; }
+    .searchForm_input.-includeAdult {
+      width: 10px;
+      height: 10px; }
+      .searchForm_input.-includeAdult:focus {
+        outline: none; }
+      .searchForm_input.-includeAdult:checked + p {
+        opacity: 1; }
+  .searchForm_submit {
+    background-color: #1F0322;
+    color: white;
+    border: 0;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border: 1px solid #1F0322;
+    margin: 0; }
+    .searchForm_submit:hover, .searchForm_submit:focus {
+      background-color: #333333; }
+
+.searchCommon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #f6bd88;
+  padding: 10px 10px 0 10px;
+  border-bottom: 1px solid #1F0322; }
+  .searchCommon_button {
+    background-color: #1F0322;
+    color: #F2A359;
+    border: 0;
+    height: 30px;
+    padding: 0 1em;
+    margin-right: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 10px; }
+    .searchCommon_button:hover {
+      color: white; }
+    .searchCommon_button:focus {
+      outline: none;
+      color: gray; }
+
+.showUserMovies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 10px 0 0 0; }
+  .showUserMovies_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #1F0322; }
+  .showUserMovies_toggle {
+    padding: 0;
+    margin-right: 10px; }
+    .showUserMovies_toggle:checked + p {
+      opacity: 1; }
+  .showUserMovies p::-moz-selection {
+    background-color: transparent; }
+  .showUserMovies p::selection {
+    background-color: transparent; }
+  .showUserMovies p {
+    font-size: .9em;
+    margin: 0;
+    opacity: .4; }
+
+.movieDetails {
+  padding-right: 30px; }
+  .movieDetails_bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-top: 10px;
+    border-bottom: 1px solid #1F0322;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    min-height: 40px; }
+  .movieDetails_comment {
+    position: relative; }
+    .movieDetails_comment:hover .movieDetails_commentContent,
+    .movieDetails_comment:focus .movieDetails_commentContent {
+      display: block; }
+  .movieDetails_commentTrigger {
+    opacity: .3; }
+    .movieDetails_commentTrigger.-active {
+      opacity: 1; }
+  .movieDetails_btn.-updateMovie {
+    -webkit-transform: translateY(-1.5px);
+            transform: translateY(-1.5px); }
+  .movieDetails_btn.-showTrailers {
+    border: 1px solid #1F0322;
+    padding: .5em 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin: 20px 0 20px 0; }
+    .movieDetails_btn.-showTrailers:hover {
+      background-color: white; }
+    .movieDetails_btn.-showTrailers i {
+      margin-right: .5em; }
+  .movieDetails_commentTrigger, .movieDetails_btn, .movieDetails_optionsTrigger {
+    padding: 0;
+    margin-left: 10px;
+    font-size: 1.2em;
+    border: none;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    cursor: pointer; }
+    .movieDetails_commentTrigger:hover, .movieDetails_commentTrigger:focus, .movieDetails_btn:hover, .movieDetails_btn:focus, .movieDetails_optionsTrigger:hover, .movieDetails_optionsTrigger:focus {
+      opacity: .7; }
+  .movieDetails_commentTrigger {
+    cursor: pointer;
+    font-size: 1em; }
+    .movieDetails_commentTrigger:hover + .movieDetails_commentContent,
+    .movieDetails_commentTrigger:focus + .movieDetails_commentContent {
+      display: block; }
+  .movieDetails_commentContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    padding: 10px;
+    background-color: #1F0322;
+    color: white;
+    border: 1px solid white;
+    width: 200px;
+    font-weight: 400; }
+  .movieDetails_status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    font-size: 1.2em;
+    font-weight: bold; }
+  .movieDetails_actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .movieDetails_options {
+    margin-left: 10px;
+    position: relative; }
+    .movieDetails_options:hover .movieDetails_optionsContent,
+    .movieDetails_options:focus .movieDetails_optionsContent {
+      display: block; }
+  .movieDetails_optionsTrigger {
+    cursor: pointer; }
+    .movieDetails_optionsTrigger:hover .movieDetails_optionsContent,
+    .movieDetails_optionsTrigger:focus .movieDetails_optionsContent {
+      display: block; }
+  .movieDetails_optionsContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: calc(100% - 20px);
+    background-color: #1F0322;
+    width: 200px;
+    padding: 10px 10px;
+    border: 1px solid white; }
+  .movieDetails_optionsButton {
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: .5em 1em;
+    color: white;
+    cursor: pointer; }
+    .movieDetails_optionsButton:hover, .movieDetails_optionsButton:focus {
+      background-color: #4a0751; }
+  .movieDetails_img {
+    width: 100%; }
+  .movieDetails_heading {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em; }
+  .movieDetails_subheading {
+    margin: 0;
+    padding: 0;
+    color: #1F0322; }
+  .movieDetails_rating {
+    margin-top: 10px;
+    font-size: 1.9em;
+    color: white;
+    font-weight: 500; }
+  .movieDetails_ratingCount {
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: .7em;
+    opacity: .9; }
+  .movieDetails_boxA {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: center;
+        align-content: center; }
+  .movieDetails_boxA1 {
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 1024px) {
+      .movieDetails_boxA1 {
+        width: auto;
+        margin-right: 5px; } }
+    .movieDetails_boxA1 p {
+      margin: 0; }
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes loader {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes spining {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spining {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.loader {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(31, 3, 34, 0.9);
+  color: #1F0322;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: none;
+  -webkit-animation: loader;
+          animation: loader;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  color: #F2A359; }
+  .loader.-active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .loader.-global {
+    position: fixed;
+    z-index: 200; }
+  .loader.-movie {
+    position: absolute;
+    z-index: 100; }
+  .loader.-sidebar {
+    position: absolute;
+    z-index: 120; }
+  .loader.-search {
+    height: 5em;
+    position: static;
+    background-color: transparent;
+    color: #1F0322; }
+  .loader_icon {
+    font-size: 4em;
+    -webkit-animation: spining;
+            animation: spining;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+
+.updateMovie_subheading {
+  font-size: 2em;
+  border-left: 5px solid #F2A359;
+  padding-left: 1em; }
+
+.movieForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+  .movieForm_ratingQuestion {
+    font-size: 1.4em;
+    margin-bottom: .5em; }
+    .movieForm_ratingQuestion.-shake {
+      -webkit-animation: shake;
+              animation: shake;
+      -webkit-animation-duration: 0.3s;
+              animation-duration: 0.3s; }
+    .movieForm_ratingQuestion.-required {
+      color: red; }
+  .movieForm_userRatingStarButton {
+    opacity: 1;
+    background-color: transparent;
+    color: #F2A359;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer; }
+    @media only screen and (min-width: 1024px) {
+      .movieForm_userRatingStarButton {
+        font-size: 2em; } }
+    .movieForm_userRatingStarButton.-active {
+      opacity: 1; }
+    .movieForm_userRatingStarButton.-tempActive {
+      opacity: .8; }
+  .movieForm_userRating {
+    display: none; }
+  .movieForm_ratingContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-bottom: 30px; }
+  .movieForm_commentLabel {
+    font-size: 1.4em;
+    margin-bottom: .5em; }
+  .movieForm_comment {
+    background-color: transparent;
+    border: 1px solid #1F0322;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 450px;
+    padding: .5em 1em;
+    color: #1F0322;
+    font-size: 1.2em;
+    margin-bottom: 1.4em;
+    min-height: 120px; }
+    .movieForm_comment:hover, .movieForm_comment:focus {
+      background-color: #fdf2e7; }
+  .movieForm_submit {
+    background-color: #1F0322;
+    color: #F2A359;
+    border: 0;
+    width: 100%;
+    max-width: 450px;
+    padding: .5em 1em;
+    font-size: 2em;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    .movieForm_submit:hover, .movieForm_submit:focus {
+      background-color: #340539; }
+

@@ -1,5 +1,6 @@
 package com.Szumski.myFilms.service;
 
+import com.Szumski.myFilms.model.databaseModels.AutoincrementId;
 import com.Szumski.myFilms.model.databaseModels.User;
 import com.Szumski.myFilms.model.databaseModels.UserMovie;
 
@@ -8,6 +9,7 @@ import com.Szumski.myFilms.repository.UserMoviesListRepository;
 import com.Szumski.myFilms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,35 +35,49 @@ public class UserMoviesService {
     public UserMoviesService() {
     }
 
+
     public void createNewUser(User user){
-        userRepository.save(user);
+
+        AutoincrementId autoincrementId = new AutoincrementId(userRepository);
+
         UserMoviesList userMoviesList = new UserMoviesList();
         userMoviesList.setId(user.getIdFilmList());
         userMoviesList.setListOfMovies(new ArrayList<>());
+
+        userMoviesList.setId(autoincrementId.createIdOfUserMoviesList());
+
         userMoviesListRepository.save(userMoviesList);
+        user.setIdFilmList(userMoviesList.getId());
+        userRepository.save(user);
+
     }
 
     public void saveMovieToUser(UserMovie userMovie, User user){
-        if (user!=null){
+
             UserMoviesList userMoviesList = userMoviesListRepository.findById(user.getIdFilmList()).get();
 
             userMoviesList.addFilmToList(userMovie);
             userMoviesListRepository.save(userMoviesList);
+            System.out.println("movie saved : "+ userMovie.toString());
 
-        }  else {
-            throw new RuntimeException();
-        }
     }
 
+    public boolean checkIsMovieExistInUser(User user, Long id){
 
-    public void deleteMovieFromUser(long id){
-        if (user!=null) {
+        return userMoviesListRepository.findById(user.getIdFilmList()).get().isMovieInList(id);
+
+
+    }
+
+    public void deleteMovieFromUser(User user ,Long id){
+        if (checkIsMovieExistInUser(user, id)) {
             UserMoviesList userMoviesList = userMoviesListRepository.findById(user.getIdFilmList()).get();
             userMoviesList.deleteFilmFromList(id);
             userMoviesListRepository.save(userMoviesList);
-        } else{
-            throw new RuntimeException();
+        }else{
+            System.out.println("aaaaaaaaaaaaaaaaaaaaa");
         }
+
     }
 
     public void changeMovieStatus(Long id){

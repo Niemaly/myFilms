@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie check list</title>
+    <script src="https://kit.fontawesome.com/745e8ceef3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+
+</head>
+<body class="root">
+    <!-- <div class="root_box"> -->
+        <nav class="nav">
+            <h1 class="nav_logo logo"><a class="logo_link" href="">movie <span class="logo_textFancy">check</span> list</a></h1>
+            <div class="nav_settings settings">
+                <button class="settings_trigger"><i class="fas fa-cog"></i></button>
+                <div class="settings_content">lorem dolorem</div>
+            </div>
+        </nav>
+        <main class="main">
+            <div class="main_view view">
+                <button class="view_button -inactive -active -watched">watched</button>
+                <button class="view_button -inactive -toWatch">to watch</button>
+                <button class="view_button -search"><i class="fas fa-search view_icon"></i> search</button>
+            </div>
+
+            <div class="main_content content">
+                <div class="content_bar -n1"></div>
+                <div class="content_bar -n2"></div>
+
+                <div class="content_resultContainer">
+
+                    <article class="content_result result -watched -active">
+                        <header class="result_header">
+                            <h2 class="result_heading -watched">watched movies (<span class="result_count">0</span>)</h2>
+                        </header>
+                        <div class="result_box watched_target"></div>
+                    </article>
+        
+                    <article class="content_result result -toWatch">
+                        <header class="result_header">
+                            <h2 class="result_heading -toWatch">to watch (<span class="result_count">0</span>)</h2>
+                        </header>
+                        <div class="result_box toWatch_target"></div>
+                    </article>
+        
+                    <article class="content_result result -search">
+                        <header class="result_header">
+                            <h2 class="result_heading -search">search</h2>
+                        </header>
+                        <form class="result_searchForm searchForm">
+                            <label class="searchForm_item -query">
+                                <p>query</p>
+                                <input class="searchForm_input -query" type="text" name="query" required>
+                            </label>
+                            <label  class="searchForm_item -year">
+                                <p>year</p>
+                                <input class="searchForm_input -year" type="text" name="year">
+                            </label>
+                            <label  class="searchForm_item -releaseYear">
+                                <p>primary release year</p>
+                                <input class="searchForm_input -releaseYear" type="text" name="primary_release_year">
+                            </label>
+                            <label  class="searchForm_item -region">
+                                <p>region</p>
+                                <select class="searchForm_input -region" name="region">
+                                    <option value="" selected>(optional)</option>
+                                </select>
+                            </label>
+                            <label class="searchForm_item -includeAdult">
+                                <input class="searchForm_input -includeAdult" type="checkbox" name="include_adult">
+                                <p>include adult</p>
+                            </label>
+                            <div class="searchForm_item -submit">
+                                <input class="searchForm_submit" type="submit" value="search">
+                            </div>
+                        </form>
+                        
+                        <div class="result_searchCommon searchCommon">
+                            <button class="searchCommon_button" data-common="popular">popular</button>
+                            <button class="searchCommon_button" data-common="topRated">top rated</button>
+                            <button class="searchCommon_button" data-common="nowPlaying">now playing</button>
+                            <button class="searchCommon_button" data-common="upcoming">upcoming</button>
+                        </div>
+                        <div class="showUserMovies"></div>
+
+                        <div class="result_tags tags"></div>
+                        <div class="result_box"></div>
+                        <div class="loader -search"><i class="loader_icon fas fa-compact-disc"></i></div>
+                    </article>
+                </div>
+
+                <div class="content_details details -movieDetails">
+                    <div class="details_content">
+
+                    </div>
+                    <button class="details_closeButton"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="content_details details -trailers">
+                    <div class="details_content">
+
+                    </div>
+                    <button class="details_closeButton -trailers"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                
+                <div class="content_details details -prompt">
+                    <div class="details_content"></div>
+                    <button class="details_closeButton -prompt"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>    
+        </main>
+
+        <div class="loader -global"><i class="loader_icon fas fa-compact-disc"></i></div>
+        <footer class="footer">
+            <p class="footer_dataSource">data source: themoviedb.org</p>
+        </footer>
+    <!-- </div> -->
+    <!-- icons: -->
+    <!-- settings: <i class="fas fa-cog"></i> -->
+    <!-- yt: <i class="fab fa-youtube"></i> -->
+    <!-- check: <i class="far fa-check-square"></i> -->
+    <!-- plus: <i class="far fa-plus-square"></i> -->
+    <!-- arrow-right: <i class="fas fa-arrow-right"></i> -->
+    <!-- edit: <i class="fas fa-edit"></i> -->
+    <!-- img: https://image.tmdb.org/t/p/w1280/51fjuzYoJKvGW43j32nBpWW6Tm1.jpg -->
+
+
+
+    <script type="text/javascript" src="../static/js/scripts.js" th:src="@{/js/scripts.js}"></script>
+</body>
+</html>

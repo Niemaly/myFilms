@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MovieTMDb {
+public class MovieTMDb  {
 
     private Boolean adult;
     private String backdrop_path;
@@ -240,4 +240,6 @@ public class MovieTMDb {
     public void setAdditionalProperty(String name, Object value) {
         this.additional_properties.put(name, value);
     }
+
+
 }

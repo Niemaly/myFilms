@@ -47,6 +47,12 @@ public class UrlGenerator {
     public String searchMovie(MovieQuery movieQuery) {
         return "https://api.themoviedb.org/3/search/movie?api_key="+apiKey+"&language="
                 +language+"&query="+movieQuery.getQuery()+"&page="+movieQuery.getPage()
-                +"&include_adult="+movieQuery.getInclude_adult()+"&year="+movieQuery.getYear();
+                +"&include_adult="+movieQuery.getInclude_adult()+"&year="+movieQuery.getYear()+"&primary_release_year"+movieQuery.getPrimary_release_year();
     }
+
+    public String getTopRated(String page) {
+        return firstPart+"top_rated?api_key="+apiKey+"&language="+language+"&page="+page;
+    }
+
+
 }

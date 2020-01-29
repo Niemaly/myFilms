@@ -12,6 +12,7 @@ public class FilmParser {
     public static MovieModel parseToMovieModel(MovieTMDb movieTMDb){
         MovieModel movieModel = new MovieModel();
         movieModel.setId(movieTMDb.getId());
+        movieModel.setTitle(movieTMDb.getTitle());
         movieModel.setDateOfRelease(movieTMDb.getRelease_date());
         movieModel.setRating(movieTMDb.getVote_average());
         movieModel.setSrc(movieTMDb.getPoster_path());

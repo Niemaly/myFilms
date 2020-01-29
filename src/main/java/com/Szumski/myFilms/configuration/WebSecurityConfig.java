@@ -1,11 +1,13 @@
 package com.Szumski.myFilms.configuration;
 
+import com.Szumski.myFilms.model.databaseModels.AutoincrementId;
 import com.Szumski.myFilms.repository.MovieRepository;
 import com.Szumski.myFilms.service.UserDetailsServiceImplementation;
 import com.Szumski.myFilms.service.UserMoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -42,15 +44,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/filmsWatched").hasAuthority("USER")
                 .antMatchers("/filmsToWatch").hasAuthority("USER")
                 .antMatchers("/search").permitAll()
+                .antMatchers("/allRequests").permitAll()
+                .antMatchers(HttpMethod.POST, "/upcoming","/now_playing", "/popular","/similar_movies","/recommendations","/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/add_movie","/delete_movie").hasAuthority("USER")
                 .anyRequest().permitAll()
-                .and().formLogin().permitAll()
+                .and().formLogin().loginPage("/login").permitAll()
                 .and().csrf().disable();
 
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // auth.inMemoryAuthentication().withUser(new User("user", passwordEncoder().encode("user"), Collections.singleton(new SimpleGrantedAuthority("USER"))));
         auth.userDetailsService(userDetailsServiceImplementation);
     }
 
