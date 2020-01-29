@@ -46,6 +46,7 @@ public class SearchTMDb  {
                                         @RequestParam String primary_release_year,
                                         @RequestParam String query) {
 
+        long startTime = System.currentTimeMillis();
 
 
         MovieQuery movieQuery = new MovieQuery();
@@ -62,6 +63,10 @@ public class SearchTMDb  {
 
         AllList allList = AllListReturner.returnAllList(restTemplate, urlGenerator.searchMovie(movieQuery));
 
+        System.out.println("\n\nTime Connecting To API \n"+ (System.currentTimeMillis()-startTime)+ "\n\n");
+
+        startTime = System.currentTimeMillis();
+
         moviesService.saveCurrentRating(allList);
 
         ResponseAllFilms responseAllFilms = new ResponseAllFilms(allList);
@@ -72,6 +77,7 @@ public class SearchTMDb  {
             }
         });
 
+        System.out.println("\n\nTime SAVING IN DATABASE  \n"+ (System.currentTimeMillis()-startTime) + "\n\n");
 
         return responseAllFilms;
     }
